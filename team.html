@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARC Tutoring - Our Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://placehold.co/32x32/3B82F6/FFFFFF?text=ARC" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .nav-link.active {
+            font-weight: 700;
+            color: #2563EB; /* Tailwind blue-600 */
+        }
+        /* Custom styles for carousel */
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+        }
+        .carousel::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+        .carousel-item {
+            flex: 0 0 auto;
+            width: 100%;
+            scroll-snap-align: start;
+        }
+        @media (min-width: 640px) {
+            .carousel-item {
+                width: 50%;
+            }
+        }
+        @media (min-width: 1024px) {
+            .carousel-item {
+                width: 25%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+  <div
+    id="page-transition"
+    class="opacity-0 transition-opacity duration-400 ease-in-out"
+  >
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="https://placehold.co/40x40/3B82F6/FFFFFF?text=ARC" alt="ARC Logo" class="h-10 w-10 rounded-full">
+                <span class="text-2xl font-bold text-gray-800">ARC Tutoring</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
+                <a href="services.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Services</a>
+                <a href="team.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Our Team</a>
+                <a href="qa.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Q&A</a>
+                <a href="contact.html" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300">Request Tutoring</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 bg-white">
+            <a href="index.html" class="block nav-link text-gray-600 hover:text-blue-600">Home</a>
+            <a href="services.html" class="block nav-link text-gray-600 hover:text-blue-600">Services</a>
+            <a href="team.html" class="block nav-link text-gray-600 hover:text-blue-600">Our Team</a>
+            <a href="qa.html" class="block nav-link text-gray-600 hover:text-blue-600">Q&A</a>
+            <a href="contact.html" class="block bg-blue-600 text-white text-center mt-2 px-4 py-2 rounded-full hover:bg-blue-700">Request Tutoring</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <div>
+            <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">Meet Our Team</h1>
+            <div id="teams-container">
+                <!-- Teams will be dynamically inserted here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer data-no-aos class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold">ARC Tutoring</h3>
+                    <p class="text-gray-400">Free, online peer tutoring for all.</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+                    <div class="flex space-x-6">
+                        <a href="index.html" class="hover:text-blue-400">Home</a>
+                        <a href="services.html" class="hover:text-blue-400">Services</a>
+                        <a href="team.html" class="hover:text-blue-400">Our Team</a>
+                        <a href="qa.html" class="hover:text-blue-400">Q&A</a>
+                    </div>
+                    <div class="text-gray-400">
+                        <span>Email: arcstemtutoring@gmail.com</span> |
+                        <span>Phone: 571-567-1797</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-4 text-center text-gray-500 text-sm">
+                &copy; <span id="year"></span> ARC Tutoring. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    // 1) Fade‑in page (assuming you added
+    //    opacity-0 transition-opacity duration-400 ease-in-out to <body>)
+    document.body.classList.add('opacity-100');
+
+    // 2) Auto‑tag every element under <body> (except scripts/styles)
+    document.querySelectorAll('body *:not(script):not(style):not([data-no-aos])')
+      .forEach(el => {
+        // If it doesn’t already have an AOS attribute, tag it
+        if (!el.hasAttribute('data-aos')) {
+          el.setAttribute('data-aos', 'fade-up');
+        }
+      });
+
+    // 3) Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-in-out',
+    });
+  });
+
+  // Fade‑out on internal link clicks
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (
+      href.startsWith('#') ||
+      href.startsWith('mailto:') ||
+      href.startsWith('tel:') ||
+      a.target === '_blank' ||
+      (href.match(/^https?:\/\//) && !href.includes(location.host))
+    ) return;
+
+    e.preventDefault();
+    document.body.classList.remove('opacity-100');
+    setTimeout(() => { window.location.href = href; }, 400);
+  });
+</script>
+</div>
+</body>
+</html>

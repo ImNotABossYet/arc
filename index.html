@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARC Tutoring - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="arcfavicon.png" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .nav-link.active {
+            font-weight: 700;
+            color: #2563EB; /* Tailwind blue-600 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+  <div
+    id="page-transition"
+    class="opacity-0 transition-opacity duration-400 ease-in-out"
+  >
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="arcfavicon.png" alt="ARC Logo" class="h-10 w-10">
+                <span class="text-2xl font-bold text-gray-800">ARC Tutoring</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
+                <a href="services.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Services</a>
+                <a href="team.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Our Team</a>
+                <a href="qa.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Q&A</a>
+                <a href="login.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Login</a>
+                <a href="contact.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Request Tutoring</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 bg-white">
+            <a href="index.html" class="block nav-link text-gray-600 hover:text-blue-600">Home</a>
+            <a href="services.html" class="block nav-link text-gray-600 hover:text-blue-600">Services</a>
+            <a href="team.html" class="block nav-link text-gray-600 hover:text-blue-600">Our Team</a>
+            <a href="qa.html" class="block nav-link text-gray-600 hover:text-blue-600">Q&A</a>
+            <a href="contact.html" class="block bg-blue-600 text-white text-center mt-2 px-4 py-2 rounded-full hover:bg-blue-700">Request Tutoring</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <div class="space-y-16">
+            <!-- Hero Section -->
+            <section class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">Unlock Your Potential with ARC Tutoring</h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">Free, high-quality, and personalized online tutoring by students, for students.</p>
+                <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl max-w-4xl mx-auto bg-gray-200">
+                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <!-- About Us Section -->
+            <section id="about" class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/600x400/DBEAFE/1E3A8A?text=About+ARC" alt="Students collaborating" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">About ARC Tutoring</h2>
+                    <p class="text-gray-600 mb-4">ARC Tutoring is a student-led non-profit organization dedicated to providing accessible and effective educational support. Our mission is to bridge learning gaps and foster a passion for knowledge in a supportive peer-to-peer environment.</p>
+                    <p class="text-gray-600">We believe every student deserves the chance to succeed, and our team of dedicated tutors is here to help them achieve their academic goals.</p>
+                </div>
+            </section>
+
+            <!-- Services Preview -->
+            <section id="services-preview">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Our Subjects</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Subject Cards -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <h3 class="text-xl font-semibold mb-2">Middle School Math</h3>
+                        <p class="text-gray-600 mb-4">Covering 4th-6th grade math concepts.</p>
+                        <a href="services.html" class="w-full inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full hover:bg-blue-200 transition">Learn More</a>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <h3 class="text-xl font-semibold mb-2">Algebra 1 & 2</h3>
+                        <p class="text-gray-600 mb-4">Mastering linear and quadratic equations.</p>
+                        <a href="services.html" class="w-full inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full hover:bg-blue-200 transition">Learn More</a>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <h3 class="text-xl font-semibold mb-2">Coding</h3>
+                        <p class="text-gray-600 mb-4">Introduction to programming logic and languages.</p>
+                        <a href="services.html" class="w-full inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full hover:bg-blue-200 transition">Learn More</a>
+                    </div>
+                </div>
+            </section>
+             <!-- Founders Section -->
+            <section id="founders">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Meet Our Founders</h2>
+                 <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                    <div class="text-center">
+                        <img src="https://placehold.co/150x150/3B82F6/FFFFFF?text=F1" alt="Founder 1" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
+                        <h3 class="text-xl font-semibold">Founder Name 1</h3>
+                        <p class="text-gray-600">Co-Founder & CEO</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://placehold.co/150x150/3B82F6/FFFFFF?text=F2" alt="Founder 2" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-md">
+                        <h3 class="text-xl font-semibold">Founder Name 2</h3>
+                        <p class="text-gray-600">Co-Founder & CTO</p>
+                    </div>
+                 </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer data-no-aos class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold">ARC Tutoring</h3>
+                    <p class="text-gray-400">Free, online peer tutoring for all.</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+                    <div class="flex space-x-6">
+                        <a href="index.html" class="hover:text-blue-400">Home</a>
+                        <a href="services.html" class="hover:text-blue-400">Services</a>
+                        <a href="team.html" class="hover:text-blue-400">Our Team</a>
+                        <a href="qa.html" class="hover:text-blue-400">Q&A</a>
+                    </div>
+                    <div class="text-gray-400">
+                        <span>Email: arcstemtutoring@gmail.com</span> |
+                        <span>Phone: 571-567-1797</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-4 text-center text-gray-500 text-sm">
+                &copy; <span id="year"></span> ARC Tutoring. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    // 1) Fade‑in page (assuming you added
+    //    opacity-0 transition-opacity duration-400 ease-in-out to <body>)
+    document.body.classList.add('opacity-100');
+
+    // 2) Auto‑tag every element under <body> (except scripts/styles)
+    document.querySelectorAll('body *:not(script):not(style):not([data-no-aos])')
+      .forEach(el => {
+        // If it doesn’t already have an AOS attribute, tag it
+        if (!el.hasAttribute('data-aos')) {
+          el.setAttribute('data-aos', 'fade-up');
+        }
+      });
+
+    // 3) Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-in-out',
+    });
+  });
+
+  // Fade‑out on internal link clicks
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (
+      href.startsWith('#') ||
+      href.startsWith('mailto:') ||
+      href.startsWith('tel:') ||
+      a.target === '_blank' ||
+      (href.match(/^https?:\/\//) && !href.includes(location.host))
+    ) return;
+
+    e.preventDefault();
+    document.body.classList.remove('opacity-100');
+    setTimeout(() => { window.location.href = href; }, 400);
+  });
+</script>
+</div>
+</body>
+</html>

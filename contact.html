@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARC Tutoring - Request Tutoring</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://placehold.co/32x32/3B82F6/FFFFFF?text=ARC" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .nav-link.active {
+            font-weight: 700;
+            color: #2563EB; /* Tailwind blue-600 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+  <div
+    id="page-transition"
+    class="opacity-0 transition-opacity duration-400 ease-in-out"
+  >
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="https://placehold.co/40x40/3B82F6/FFFFFF?text=ARC" alt="ARC Logo" class="h-10 w-10 rounded-full">
+                <span class="text-2xl font-bold text-gray-800">ARC Tutoring</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Home</a>
+                <a href="services.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Services</a>
+                <a href="team.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Our Team</a>
+                <a href="qa.html" class="nav-link text-gray-600 hover:text-blue-600 transition duration-300">Q&A</a>
+                <a href="contact.html" class="nav-link bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300">Request Tutoring</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 bg-white">
+            <a href="index.html" class="block nav-link text-gray-600 hover:text-blue-600">Home</a>
+            <a href="services.html" class="block nav-link text-gray-600 hover:text-blue-600">Services</a>
+            <a href="team.html" class="block nav-link text-gray-600 hover:text-blue-600">Our Team</a>
+            <a href="qa.html" class="block nav-link text-gray-600 hover:text-blue-600">Q&A</a>
+            <a href="contact.html" class="block bg-blue-600 text-white text-center mt-2 px-4 py-2 rounded-full hover:bg-blue-700">Request Tutoring</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+            <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Request Tutoring</h1>
+            <form id="tutoring-request-form">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                    <div>
+                        <label for="student-name" class="block text-gray-700 font-semibold mb-2">Student Name</label>
+                        <input type="text" id="student-name" name="student-name" class="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label for="parent-name" class="block text-gray-700 font-semibold mb-2">Parent Name</label>
+                        <input type="text" id="parent-name" name="parent-name" class="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                </div>
+                <div class="mb-4">
+                    <label for="subject-request" class="block text-gray-700 font-semibold mb-2">Subject</label>
+                    <select id="subject-request" name="subject" class="w-full px-4 py-2 border bg-white rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        <option value="">Select a subject</option>
+                        <!-- Options will be populated by JS -->
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block text-gray-700 font-semibold mb-2">Additional Information</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold">Send Request</button>
+            </form>
+            <div id="form-success-message" class="hidden mt-6 p-4 bg-green-100 text-green-800 border border-green-300 rounded-lg">
+                Thank you! Your tutoring request has been sent. We will get back to you shortly.
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer data-no-aos class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold">ARC Tutoring</h3>
+                    <p class="text-gray-400">Free, online peer tutoring for all.</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+                    <div class="flex space-x-6">
+                        <a href="index.html" class="hover:text-blue-400">Home</a>
+                        <a href="services.html" class="hover:text-blue-400">Services</a>
+                        <a href="team.html" class="hover:text-blue-400">Our Team</a>
+                        <a href="qa.html" class="hover:text-blue-400">Q&A</a>
+                    </div>
+                    <div class="text-gray-400">
+                        <span>Email: arcstemtutoring@gmail.com</span> |
+                        <span>Phone: 571-567-1797</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-4 text-center text-gray-500 text-sm">
+                &copy; <span id="year"></span> ARC Tutoring. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    // 1) Fade‑in page (assuming you added
+    //    opacity-0 transition-opacity duration-400 ease-in-out to <body>)
+    document.body.classList.add('opacity-100');
+
+    // 2) Auto‑tag every element under <body> (except scripts/styles)
+    document.querySelectorAll('body *:not(script):not(style):not([data-no-aos])')
+      .forEach(el => {
+        // If it doesn’t already have an AOS attribute, tag it
+        if (!el.hasAttribute('data-aos')) {
+          el.setAttribute('data-aos', 'fade-up');
+        }
+      });
+
+    // 3) Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-in-out',
+    });
+  });
+
+  // Fade‑out on internal link clicks
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (
+      href.startsWith('#') ||
+      href.startsWith('mailto:') ||
+      href.startsWith('tel:') ||
+      a.target === '_blank' ||
+      (href.match(/^https?:\/\//) && !href.includes(location.host))
+    ) return;
+
+    e.preventDefault();
+    document.body.classList.remove('opacity-100');
+    setTimeout(() => { window.location.href = href; }, 400);
+  });
+</script>
+</div>
+</body>
+</html>
